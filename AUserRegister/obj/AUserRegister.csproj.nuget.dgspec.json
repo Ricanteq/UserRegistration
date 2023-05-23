@@ -1,0 +1,330 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister\\AUserRegister.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Features\\AUserRegister.Features.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Features\\AUserRegister.Features.csproj",
+        "projectName": "AUserRegister.Features",
+        "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Features\\AUserRegister.Features.csproj",
+        "packagesPath": "C:\\Users\\rican\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Features\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rican\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj": {
+                "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj"
+              },
+              "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\AUserRegister.Persistence.csproj": {
+                "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\AUserRegister.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.5.2, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj",
+        "projectName": "AUserRegister.Models",
+        "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj",
+        "packagesPath": "C:\\Users\\rican\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rican\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.5.2, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\AUserRegister.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\AUserRegister.Persistence.csproj",
+        "projectName": "AUserRegister.Persistence",
+        "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\AUserRegister.Persistence.csproj",
+        "packagesPath": "C:\\Users\\rican\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rican\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj": {
+                "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister\\AUserRegister.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister\\AUserRegister.csproj",
+        "projectName": "AUserRegister",
+        "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister\\AUserRegister.csproj",
+        "packagesPath": "C:\\Users\\rican\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rican\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Features\\AUserRegister.Features.csproj": {
+                "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Features\\AUserRegister.Features.csproj"
+              },
+              "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj": {
+                "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Models\\AUserRegister.Models.csproj"
+              },
+              "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\AUserRegister.Persistence.csproj": {
+                "projectPath": "C:\\Users\\rican\\Sources\\Ricanteq\\UserRegistration\\AUserRegister.Persistence\\AUserRegister.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.5.2, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

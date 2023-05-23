@@ -1,0 +1,17 @@
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\bin\Debug\net6.0\AUserRegister.Persistence.deps.json
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\bin\Debug\net6.0\AUserRegister.Persistence.runtimeconfig.json
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\bin\Debug\net6.0\AUserRegister.Persistence.dll
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\bin\Debug\net6.0\AUserRegister.Persistence.pdb
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\bin\Debug\net6.0\AUserRegister.Models.dll
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\bin\Debug\net6.0\AUserRegister.Models.pdb
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.csproj.AssemblyReference.cache
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.AssemblyInfoInputs.cache
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.AssemblyInfo.cs
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.csproj.CopyComplete
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.dll
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\refint\AUserRegister.Persistence.dll
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.pdb
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\AUserRegister.Persistence.genruntimeconfig.cache
+C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Persistence\obj\Debug\net6.0\ref\AUserRegister.Persistence.dll
