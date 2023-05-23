@@ -1,0 +1,11 @@
+# Ignore the build output directory
+/bin/
+/obj/
+
+# Ignore the Rider IDE specific files
+.idea/
+*.sln.iml
+
+# Include the appsettings.json and appsettings.Development.json files
+!/appsettings.json
+!/appsettings.Development.json
