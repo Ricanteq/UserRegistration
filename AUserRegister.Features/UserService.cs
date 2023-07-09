@@ -1,4 +1,5 @@
-﻿using AUserRegister.Models;
+﻿using System.Security.Authentication;
+using AUserRegister.Models;
 using AUserRegister.Persistence;
 using FluentValidation;
 using FluentValidation.Results;
@@ -40,11 +41,12 @@ public class UserService : IUserService
     {
         return await _context.Users.ToListAsync();
     }
-
     public async Task<User> GetUserByIdAsync(int id)
     {
-        return await _context.Users.FindAsync(id);
+               return await _context.Users.FindAsync(id) ?? 
+               throw new InvalidOperationException("user not found.");
     }
+
 
     public async Task<bool> CheckUserExistsAsync(int id)
     {
@@ -56,9 +58,9 @@ public class UserService : IUserService
         var userToUpdate = await _context.Users.FindAsync(id);
         if (userToUpdate != null)
         {
-            userToUpdate.FirstName = updatedUser.FirstName ?? userToUpdate.FirstName;
-            userToUpdate.LastName = updatedUser.LastName ?? userToUpdate.LastName;
-            userToUpdate.Email = updatedUser.Email ?? userToUpdate.Email;
+            userToUpdate.FirstName = updatedUser.FirstName;
+            userToUpdate.LastName = updatedUser.LastName;
+            userToUpdate.Email = updatedUser.Email;
 
             if (!string.IsNullOrWhiteSpace(updatedUser.Password))
                 userToUpdate.Password = BCrypt.Net.BCrypt.HashPassword(updatedUser.Password);
@@ -77,15 +79,24 @@ public class UserService : IUserService
         }
     }
 
-    public async Task<User> LoginUserAsync(string email, string password)
+    /*public async Task<User> LoginUserAsync(string email, string password)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
         if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password)) return user;
 
         return null;
+    }*/
+    
+    public async Task<User> LoginUserAsync(string email, string password)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
+        if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password)) return user;
+
+        throw new AuthenticationException("Invalid email or password."); // Throw an exception
     }
 
-    public class UserValidator : AbstractValidator<User>
+
+    private class UserValidator : AbstractValidator<User>
     {
         public UserValidator()
         {
@@ -94,6 +105,13 @@ public class UserService : IUserService
             RuleFor(u => u.Email).NotEmpty().WithMessage("Email cannot be empty");
             RuleFor(u => u.Email).EmailAddress().WithMessage("Invalid email address");
             RuleFor(u => u.Password).NotEmpty().WithMessage("Password cannot be empty");
+            RuleFor(u => u.Password).MinimumLength(8).WithMessage("Password must be at least 8 characters long");
+            RuleFor(u => u.Password).Matches("[A-Z]").WithMessage("Password must contain at least one uppercase letter");
+            RuleFor(u => u.Password).Matches("[a-z]").WithMessage("Password must contain at least one lowercase letter");
+            RuleFor(u => u.Password).Matches("[0-9]").WithMessage("Password must contain at least one digit");
+            RuleFor(u => u.Password).Matches("[^a-zA-Z0-9]").WithMessage("Password must contain at least one special character");
         }
     }
+
 }
+

@@ -12,3 +12,17 @@ C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Models\obj\Debug\net
 C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.pdb
 C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.genruntimeconfig.cache
 C:\Users\rican\Sources\Ricanteq\AUserRegister\AUserRegister.Models\obj\Debug\net6.0\ref\AUserRegister.Models.dll
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\bin\Debug\net6.0\AUserRegister.Models.deps.json
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\bin\Debug\net6.0\AUserRegister.Models.runtimeconfig.json
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\bin\Debug\net6.0\AUserRegister.Models.dll
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\bin\Debug\net6.0\AUserRegister.Models.pdb
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.csproj.AssemblyReference.cache
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.AssemblyInfoInputs.cache
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.AssemblyInfo.cs
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.csproj.CoreCompileInputs.cache
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.dll
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\refint\AUserRegister.Models.dll
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.pdb
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\AUserRegister.Models.genruntimeconfig.cache
+C:\Users\rican\Sources\Ricanteq\UserRegistration\AUserRegister.Models\obj\Debug\net6.0\ref\AUserRegister.Models.dll

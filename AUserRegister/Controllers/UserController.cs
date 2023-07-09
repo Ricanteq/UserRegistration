@@ -1,6 +1,12 @@
-﻿using AUserRegister.Features;
+﻿
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using AUserRegister.Features;
 using AUserRegister.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+
 
 namespace AUserRegister.Controllers;
 
@@ -9,10 +15,13 @@ namespace AUserRegister.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
+    private readonly IConfiguration _configuration;
 
-    public UserController(IUserService userService)
+
+    public UserController(IConfiguration  configuration, IUserService userService)
     {
         _userService = userService;
+        _configuration = configuration;
     }
 
     [HttpPost]
@@ -72,7 +81,35 @@ public class UserController : ControllerBase
     {
         var user = await _userService.LoginUserAsync(request.Email, request.Password);
         if (user == null) return Unauthorized();
+       
+        var token = CreateToken(user);
 
-        return user;
+        return Ok(token);
+        //return user;
     }
+
+    private string CreateToken(User user)
+    {
+        List<Claim> claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Email, user.Email),
+            //new Claim(ClaimTypes.Role, "Admin"),
+            //new Claim(ClaimTypes.Role, "User"),
+        };
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+            _configuration.GetSection("AppSettings:Token").Value!));
+
+         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+ 
+         var token = new JwtSecurityToken(
+             claims: claims,
+             expires: DateTime.Now.AddDays(1),
+             signingCredentials: creds
+         );
+ 
+         var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+ 
+         return jwt;
+    
+}
 }

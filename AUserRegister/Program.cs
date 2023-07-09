@@ -6,22 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// var config = new ConfigurationBuilder()
-//     .AddJsonFile("appsettings.json", false, true)
-//     .AddJsonFile("appsettings.local.json", false, true)
-//     .AddEnvironmentVariables()
-//     .Build();
 
-// var connectionStrings = config.GetSection("ConnectionStrings").Get<ConnectionStrings>();
-
-// builder.Services.AddSingleton(connectionStrings);
 
 
 builder.Services.AddControllers();
 
-// builder.Services.AddDbContextFactory<DataContext>(options => 
-//     options.UseNpgsql(connectionStrings.DefaultConnection)
-// );
+
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
@@ -33,7 +23,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add necessary classes to container
-//builder.Services.AddScoped<UserService>();
+
 builder.Services.AddScoped<IUserService, UserService>();
 
 // Add CORS configuration
