@@ -9,10 +9,12 @@
         RuleFor(u => u.Password).NotEmpty().WithMessage("Password cannot be empty");
     }
 }*/
+
 using AUserRegister.Models;
 using FluentValidation;
 
 namespace AUserRegister.Validators;
+
 public class UserValidator : AbstractValidator<User>
 {
     public UserValidator()
@@ -26,6 +28,7 @@ public class UserValidator : AbstractValidator<User>
         RuleFor(u => u.Password).Matches("[A-Z]").WithMessage("Password must contain at least one uppercase letter");
         RuleFor(u => u.Password).Matches("[a-z]").WithMessage("Password must contain at least one lowercase letter");
         RuleFor(u => u.Password).Matches("[0-9]").WithMessage("Password must contain at least one digit");
-        RuleFor(u => u.Password).Matches("[^a-zA-Z0-9]").WithMessage("Password must contain at least one special character");
+        RuleFor(u => u.Password).Matches("[^a-zA-Z0-9]")
+            .WithMessage("Password must contain at least one special character");
     }
 }

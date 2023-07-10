@@ -9,4 +9,10 @@ public class User
     public string LastName { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
+
+    [JsonIgnore] public string RefreshToken { get; set; } = string.Empty;
+
+    [JsonIgnore] public DateTime TokenCreated { get; set; }
+
+    [JsonIgnore] public DateTime TokenExpires { get; set; }
 }

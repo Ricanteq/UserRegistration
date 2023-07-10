@@ -41,9 +41,10 @@ public class UserService : IUserService
     {
         return await _context.Users.ToListAsync();
     }
+
     public async Task<User> GetUserByIdAsync(int id)
     {
-               return await _context.Users.FindAsync(id) ?? 
+        return await _context.Users.FindAsync(id) ??
                throw new InvalidOperationException("user not found.");
     }
 
@@ -86,7 +87,7 @@ public class UserService : IUserService
 
         return null;
     }*/
-    
+
     public async Task<User> LoginUserAsync(string email, string password)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
@@ -106,12 +107,13 @@ public class UserService : IUserService
             RuleFor(u => u.Email).EmailAddress().WithMessage("Invalid email address");
             RuleFor(u => u.Password).NotEmpty().WithMessage("Password cannot be empty");
             RuleFor(u => u.Password).MinimumLength(8).WithMessage("Password must be at least 8 characters long");
-            RuleFor(u => u.Password).Matches("[A-Z]").WithMessage("Password must contain at least one uppercase letter");
-            RuleFor(u => u.Password).Matches("[a-z]").WithMessage("Password must contain at least one lowercase letter");
+            RuleFor(u => u.Password).Matches("[A-Z]")
+                .WithMessage("Password must contain at least one uppercase letter");
+            RuleFor(u => u.Password).Matches("[a-z]")
+                .WithMessage("Password must contain at least one lowercase letter");
             RuleFor(u => u.Password).Matches("[0-9]").WithMessage("Password must contain at least one digit");
-            RuleFor(u => u.Password).Matches("[^a-zA-Z0-9]").WithMessage("Password must contain at least one special character");
+            RuleFor(u => u.Password).Matches("[^a-zA-Z0-9]")
+                .WithMessage("Password must contain at least one special character");
         }
     }
-
 }
-

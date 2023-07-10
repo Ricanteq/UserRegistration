@@ -1,12 +1,11 @@
-﻿
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using AUserRegister.Features;
 using AUserRegister.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-
 
 namespace AUserRegister.Controllers;
 
@@ -14,11 +13,11 @@ namespace AUserRegister.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly IUserService _userService;
     private readonly IConfiguration _configuration;
+    private readonly IUserService _userService;
 
 
-    public UserController(IConfiguration  configuration, IUserService userService)
+    public UserController(IConfiguration configuration, IUserService userService)
     {
         _userService = userService;
         _configuration = configuration;
@@ -81,35 +80,77 @@ public class UserController : ControllerBase
     {
         var user = await _userService.LoginUserAsync(request.Email, request.Password);
         if (user == null) return Unauthorized();
-       
+
         var token = CreateToken(user);
+
+
+        // To set a refresh Token
+        var refreshToken = GenerateRefreshToken();
+        SetRefreshToken(user, refreshToken);
 
         return Ok(token);
         //return user;
     }
 
+    [HttpPost("refresh-token")]
+    public async Task<ActionResult<string>> RefreshToken(User user)
+    {
+        var refreshToken = Request.Cookies["refreshToken"];
+        if (!user.RefreshToken.Equals(refreshToken))
+            return Unauthorized("Invalid Refresh Token");
+        if (user.TokenExpires < DateTime.Now) return Unauthorized("Token expired.");
+
+        var token = CreateToken(user);
+        var newRefreshToken = GenerateRefreshToken();
+        SetRefreshToken(user, newRefreshToken);
+        return Ok(token);
+    }
+
+
+    private RefreshToken GenerateRefreshToken()
+    {
+        var refreshToken = new RefreshToken
+        {
+            Token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64)),
+            Expires = DateTime.Now.AddDays(7)
+        };
+        return refreshToken;
+    }
+
+    private void SetRefreshToken(User user, RefreshToken newRefreshToken)
+    {
+        var cookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Expires = newRefreshToken.Expires
+        };
+        Response.Cookies.Append("refreshToken", newRefreshToken.Token, cookieOptions);
+        user.RefreshToken = newRefreshToken.Token;
+        user.TokenCreated = newRefreshToken.CreatedDate;
+        user.TokenExpires = newRefreshToken.Expires;
+    }
+
     private string CreateToken(User user)
     {
-        List<Claim> claims = new List<Claim>
+        var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Email, user.Email),
+            new(ClaimTypes.Email, user.Email)
             //new Claim(ClaimTypes.Role, "Admin"),
             //new Claim(ClaimTypes.Role, "User"),
         };
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
             _configuration.GetSection("AppSettings:Token").Value!));
 
-         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
- 
-         var token = new JwtSecurityToken(
-             claims: claims,
-             expires: DateTime.Now.AddDays(1),
-             signingCredentials: creds
-         );
- 
-         var jwt = new JwtSecurityTokenHandler().WriteToken(token);
- 
-         return jwt;
-    
-}
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+        var token = new JwtSecurityToken(
+            claims: claims,
+            expires: DateTime.Now.AddDays(1),
+            signingCredentials: creds
+        );
+
+        var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+        return jwt;
+    }
 }

@@ -7,22 +7,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BCrypt.Net" Version="0.1.0" />
-        <PackageReference Include="FluentValidation" Version="11.5.2" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+        <PackageReference Include="BCrypt.Net" Version="0.1.0"/>
+        <PackageReference Include="FluentValidation" Version="11.5.2"/>
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\AUserRegister.Features\AUserRegister.Features.csproj" />
-        <ProjectReference Include="..\AUserRegister.Models\AUserRegister.Models.csproj" />
-        <ProjectReference Include="..\AUserRegister.Persistence\AUserRegister.Persistence.csproj" />
+        <ProjectReference Include="..\AUserRegister.Features\AUserRegister.Features.csproj"/>
+        <ProjectReference Include="..\AUserRegister.Models\AUserRegister.Models.csproj"/>
+        <ProjectReference Include="..\AUserRegister.Persistence\AUserRegister.Persistence.csproj"/>
     </ItemGroup>
 
 </Project>
