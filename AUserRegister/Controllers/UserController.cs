@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using AUserRegister.Features;
 using AUserRegister.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -22,6 +23,21 @@ public class UserController : ControllerBase
         _userService = userService;
         _configuration = configuration;
     }
+    
+    [HttpGet, Authorize]
+    public ActionResult<string> GetMyEmail()
+    {
+        return Ok(_userService.GetMyEmail());
+
+        //var userName = User?.Identity?.Name;
+        //var roleClaims = User?.FindAll(ClaimTypes.Role);
+        //var roles = roleClaims?.Select(c => c.Value).ToList();
+        //var roles2 = User?.Claims
+        //    .Where(c => c.Type == ClaimTypes.Role)
+        //    .Select(c => c.Value)
+        //    .ToList();
+        //return Ok(new { userName, roles, roles2 });
+    }
 
     [HttpPost]
     public async Task<IActionResult> Create(User user)
@@ -37,7 +53,7 @@ public class UserController : ControllerBase
         return Ok(createdUser);
     }
 
-    [HttpGet]
+    [HttpGet, Authorize(Roles = "Admin")]
     public async Task<ActionResult<List<User>>> GetAllUsers()
     {
         var users = await _userService.GetAllUsersAsync();
@@ -134,9 +150,9 @@ public class UserController : ControllerBase
     {
         var claims = new List<Claim>
         {
-            new(ClaimTypes.Email, user.Email)
-            //new Claim(ClaimTypes.Role, "Admin"),
-            //new Claim(ClaimTypes.Role, "User"),
+            new(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, "Admin"),
+            new Claim(ClaimTypes.Role, "User")
         };
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
             _configuration.GetSection("AppSettings:Token").Value!));

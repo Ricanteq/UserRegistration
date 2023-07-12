@@ -1,8 +1,10 @@
 ﻿using System.Security.Authentication;
+using System.Security.Claims;
 using AUserRegister.Models;
 using AUserRegister.Persistence;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace AUserRegister.Features;
@@ -10,10 +12,28 @@ namespace AUserRegister.Features;
 public class UserService : IUserService
 {
     private readonly DataContext _context;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public UserService(DataContext context)
+
+    public UserService(DataContext context, IHttpContextAccessor httpContextAccessor)
     {
         _context = context;
+        _httpContextAccessor = httpContextAccessor;
+    }
+    
+    public string GetMyEmail()
+    {
+        var result = string.Empty;
+        if(_httpContextAccessor.HttpContext is not null)
+        {
+            result = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Email);
+        }
+        return result;
+    }
+
+    public string GetMyName()
+    {
+        throw new NotImplementedException();
     }
 
     public async Task<ValidationResult> ValidateUserAsync(User user)

@@ -5,6 +5,7 @@ namespace AUserRegister.Features;
 
 public interface IUserService
 {
+    string GetMyEmail();
     Task<ValidationResult> ValidateUserAsync(User user);
     Task<bool> CheckEmailExistsAsync(string email);
     Task<User> CreateUserAsync(User user);
